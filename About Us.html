@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Durga Puja Porikroma</title>
+    <link rel="stylesheet"
+          href="source/jquery.fancybox.css" type="text/css">
+    <script src="source/jquery-3.7.1.min.js"></script>
+    <script src="source/jquery.fancybox.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #f7eab0;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+        #container {
+            width: 100%;
+            height: 55px;
+            background-color: #e8d84d;
+        }
+        #nav {
+            width: 100%;
+        }
+        #nav_wrapper {
+            width: 960px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        #nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+        #nav ul li:hover {
+            background-color: #e3ce11;
+        }
+        #nav ul li a {
+            color: #000000;
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+        }
+        #nav ul li a:hover {
+            color: rgb(241, 82, 8);
+        }
+        #nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background-color: rgb(230, 218, 118);
+            border: 5px solid red;
+            border-top: 0;
+            z-index: 1000;
+        }
+        #nav ul li:hover > ul {
+            display: block;
+        }
+        #nav ul ul li {
+            display: block;
+            width: 100%;
+        }
+        #nav ul ul li a {
+            color: black;
+            padding: 12px;
+        }
+        #nav ul ul li a:hover {
+            color: rgb(236, 67, 67);
+        }
+        .container {
+            width: 100%;
+            padding: 5px;
+            margin: 30px auto 0;
+        }
+        .about {
+            width: 850px;
+            margin: 45px auto;
+            padding: 35px 45px;
+            background: rgba(255, 250, 210, 0.95);
+            border: 3px solid #8b0000;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+        .about h1 {
+            margin: 0 0 25px;
+            padding: 12px;
+            color: #8b0000;
+            font-size: 38px;
+            border-bottom: 3px solid #8b0000;
+        }
+        .about h2 {
+            color: #c0392b;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .about p {
+            text-align: justify;
+            line-height: 1.8;
+            margin: 18px 0;
+        }
+        .ending {
+            text-align: center !important;
+            font-weight: bold;
+            font-size: 21px;
+            color: #8b0000;
+            margin-top: 25px !important;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <div id="nav_wrapper">
+                <ul>
+                    <li>
+                        <a href="index.html"> Home </a>
+                    </li>
+                    <li>
+                        <a href="Zones.html"> Zones ▾</a>
+                        <ul>
+                            <li>
+                                <a href="North 24 PGS.html"> North 24 Parganas </a>
+                            </li>
+                            <li>
+                                <a href="South 24 PGS.html"> South 24 Parganas </a>
+                            </li>
+                            <li>
+                                <a href="Kolkata.html"> Kolkata </a>
+                            </li>
+                            <li>
+                                <a href="Nadia.html"> Nadia </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="About Us.html"> About Us </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about">
+        <h1>About Us</h1>
+        <h2>Welcome to Durga Puja Porikroma 2026!</h2>
+        <p>
+            This webpage has been created with enthusiasm and creativity by the
+            students of our school to celebrate the spirit, traditions, art, and
+            cultural heritage of Durga Puja.
+        </p>
+        <p>
+            Through Durga Puja Porikroma 2026, we invite you to explore the
+            festive celebrations, beautifully decorated puja pandals, traditional
+            rituals, cultural programmes, artistic creations, and the vibrant
+            atmosphere that makes Durga Puja so special.
+        </p>
+        <p>
+            Our aim is not only to showcase the grandeur of this beloved festival
+            but also to help students learn about our rich cultural heritage and
+            appreciate the values of unity, creativity, devotion, community, and
+            togetherness.
+        </p>
+        <p>
+            This website is a small effort by young minds to document and share
+            the colourful journey of Durga Puja with everyone. We hope that this
+            virtual porikroma brings the joy and excitement of the festival to
+            your screen and inspires everyone to celebrate our culture with pride
+            and respect.
+        </p>
+        <p>
+            Come, join us on this virtual Porikroma and experience the colours,
+            creativity, traditions, and spirit of Durga Puja 2026!
+        </p>
+        <p class="ending">
+            শুভ দুর্গাপূজা! | Happy Durga Puja 2026!
+        </p>
+    </div>
+    <footer>
+        &copy; 2026 Durga Puja Porikroma | All Rights Reserved
+    </footer>
+    <script>
+        $(document).ready(function () {
+            $(".fancybox").fancybox();
+        });
+    </script>
+</body>
+</html>

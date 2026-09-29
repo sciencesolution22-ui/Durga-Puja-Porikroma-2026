@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Durga Puja Porikroma</title>
+    <link rel="stylesheet"
+          href="source/jquery.fancybox.css" type="text/css">
+<script src="source/jquery-3.7.1.min.js"></script>
+<script src="source/jquery.fancybox.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #f7eab0;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+		#container {
+            width: 100%;
+            height: 55px;
+            background-color: #e8d84d;
+        }
+        #nav {
+            width: 100%;
+        }
+        #nav_wrapper {
+            width: 960px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        #nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+        #nav ul li:hover {
+            background-color: #e3ce11;
+        }
+        #nav ul li a {
+            color: #000000;
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+        }
+        #nav ul li a:hover {
+            color: rgb(241, 82, 8);
+        }
+        #nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background-color: rgb(230, 218, 118);
+            border: 5px solid red;
+            border-top: 0;
+            z-index: 1000;
+        }
+        #nav ul li:hover > ul {
+            display: block;
+        }
+        #nav ul ul li {
+            display: block;
+            width: 100%;
+        }
+        #nav ul ul li a {
+            color: black;
+            padding: 12px;
+        }
+        #nav ul ul li a:hover {
+            color: rgb(236, 67, 67);
+        }
+        .container {
+            width: 100%;
+            padding: 5px;
+            margin: 30px auto 0;
+        }
+        .gallery {
+            width: 1000px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 25px;
+        }
+        .photo-box {
+            width: 300px;
+            background-color: white;
+            border: 1px solid #42517f;
+            box-shadow:
+                2px 2px 5px #000;
+            text-align: center;
+            overflow: hidden;
+        }
+       .photo-box img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+        .photo-name {
+            padding: 10px;
+            font-weight: bold;
+            background-color: #e8d84d;
+            color: #000;
+        }
+        .map-box {
+            height: 100px;
+            background: linear-gradient(135deg, #ff173d, #d50057, #8e087f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .map-box a {
+            text-decoration: none;
+        }
+        .map-box button {
+            width: 220px;
+            height: 60px;
+            border: 3px solid #07182f;
+            border-radius: 40px;
+            background: linear-gradient(135deg, #12355B, #061A38);
+            color: white;
+            font: bold 25px "Trebuchet MS", Arial;
+            cursor: pointer;
+            box-shadow: 0 0 0 2px #315d9a, 0 5px 10px #0008;
+        }
+        .map-box button::before {
+            content: "📍";
+            font-size: 30px;
+        }
+        .map-box button::after {
+            content: " | ";
+            color: #ffd32a;
+        }
+        .map-box button:hover {
+            background: #12355B;
+            transform: translateY(-2px);
+        }
+        .map-box button:active {
+            transform: translateY(1px);
+        }
+        @media screen and (max-width: 700px) {
+            .map-box { height: 165px; }
+            .map-box button { height: 85px; font-size: 27px; }
+            .map-box button::before { font-size: 38px; }
+            .map-box button::after { font-size: 42px; }
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+        @media screen and (max-width: 1050px) {
+            .gallery {
+                width: 650px;
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+            #nav_wrapper {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            .gallery {
+                width: 320px;
+                grid-template-columns:
+                    1fr;
+            }
+            .photo-box {
+                width: 300px;
+            }
+            #nav_wrapper {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <div id="nav_wrapper">
+                <ul>
+                    <li>
+                        <a href="index.html"> Home </a>
+                    </li>
+                    <li>
+                        <a href="Zones.html"> Zones ▾</a>
+                        <ul>
+                            <li>
+                                <a href="North 24 PGS.html"> North 24 Parganas </a>
+                            </li>
+                            <li>
+                                <a href="South 24 PGS.html"> South 24 Parganas </a>
+                            </li>
+                            <li>
+                                <a href="Kolkata.html"> Kolkata </a>
+                            </li>
+                            <li>
+                                <a href="Nadia.html"> Nadia </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="About Us.html">About Us </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section id="content">
+            <div class="gallery">
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="Ekdalia Evergreen.jfif" title="Ekdalia Evergreen"><img src="Ekdalia Evergreen.jfif" alt="Ekdalia Evergreen">
+                    </a>
+                    <div class="photo-name">
+                        Ekdalia Evergreen
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Ekdalia+Evergreen+Club/@22.5212236,88.363988,17z/data=!3m1!4b1!4m6!3m5!1s0x3a0276d417b26201:0x220c3a4dbd7f651a!8m2!3d22.5212187!4d88.3665629!16s%2Fg%2F1pp2txnxj?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="Badamtala Ashar Sangha(KOLKATA).jfif" title="Badamtala Ashar Sangha"><img src="Badamtala Ashar Sangha(KOLKATA).jfif"alt="Badamtala Ashar Sangha">
+                    </a>
+                    <div class="photo-name">
+                        Badamtala Ashar Sangha
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Badamtala+Ashar+Sangha+Durgotsab/@22.5179717,88.3411496,17z/data=!3m1!4b1!4m6!3m5!1s0x3a02770034b2c43f:0xe927c8d0bec44587!8m2!3d22.5179668!4d88.3437245!16s%2Fg%2F11wjdd_z8v?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="College Square(KOLKATA).jfif" title="College Square"><img src="College Square(KOLKATA).jfif"0 alt="College Square">
+                    </a>
+                    <div class="photo-name">
+                        College Square
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/College+Square+Durga+Puja/@22.5745328,88.3618975,17z/data=!3m1!4b1!4m6!3m5!1s0x3a0277f855b8772d:0xebfd1e10c9feb763!8m2!3d22.5745279!4d88.3644724!16s%2Fg%2F11h_wz1xzw?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="Kashi Bose Lane(KOLKATA).jfif" title="Kashi Bose Lane"><img src="Kashi Bose Lane(KOLKATA).jfif" alt="Kashi Bose Lane">
+                    </a>
+                    <div class="photo-name">
+                        Kashi Bose Lane
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Kashi+Bose+Lane+Durga+Puja+Committee/@22.5909028,88.3663425,17z/data=!3m1!4b1!4m6!3m5!1s0x3a027636f4aba21b:0xd56a6b40b1520547!8m2!3d22.5908979!4d88.3689174!16s%2Fg%2F11csqf42nw?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="Santosh Mitra Square(KOLKATA).jfif" title="Santosh Mitra Square"><img src="Santosh Mitra Square(KOLKATA).jfif" alt="Santosh Mitra Square">
+                    </a>
+                    <div class="photo-name">
+                        Santosh Mitra Square
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Santosh+Mitra+Square/@22.566025,88.3630783,17z/data=!3m1!4b1!4m6!3m5!1s0x3a027655a41c9633:0xd230742cc8f8580b!8m2!3d22.5660201!4d88.3656532!16s%2Fg%2F1th0l9d3?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="Sreebhumi Sporting Club.jfif" title="Sreebhumi Sporting Club"><img src="Sreebhumi Sporting Club.jfif" alt="Sreebhumi Sporting Club">
+                    </a>
+                    <div class="photo-name">
+                        Sreebhumi Sporting Club
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Sreebhumi+Sporting+Club+Play+Ground/@22.6003902,88.4000404,17z/data=!3m1!4b1!4m6!3m5!1s0x3a0275fd4858d083:0x2996dbcede4bbf02!8m2!3d22.6003853!4d88.4026153!16s%2Fg%2F11gd1w4_bj?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="Kumurtuli Park(KOLKATA).jpg" title="Kumurtuli"><img src="Kumurtuli Park(KOLKATA).jpg" alt="Kumurtuli">
+                    </a>
+                    <div class="photo-name">
+                        Kumurtuli Park
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Kumartuli+Park/@22.5989876,88.3588914,17z/data=!3m1!4b1!4m6!3m5!1s0x3a0277cd636f29f3:0x76a486a0b70b04b7!8m2!3d22.5989827!4d88.3614663!16s%2Fg%2F11g6wy7vtd?entry=ttu&g_ep=EgoyMDI2MDkyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="talla_protoy.jfif" title="Tala"><img src="talla_protoy.jfif" alt="Tala">
+                    </a>
+                    <div class="photo-name">
+                        Tala Prattoy Sarbojonin
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/search/Tala+Prattoy,+J96M%2B5RQ,+Manmatha+Dutta+Rd,+Tala,+Kolkata,+West+Bengal+700037/@22.6096291,88.3809776,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="MD. Ali Park.jpg" title="Park"><img src="MD. Ali Park.jpg" alt="Park">
+                    </a>
+                    <div class="photo-name">
+                        Muhammad Ali Park
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Muhammad+Ali+Park/@22.5771937,88.358162,17z/data=!3m1!4b1!4m6!3m5!1s0x3a0277b28cce4d49:0x64c1f82caceb3609!8m2!3d22.5771888!4d88.3607369!16s%2Fg%2F1tg9r2zy?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="Tridhara Sammilani.jfif" title="Tridhara"><img src="Tridhara Sammilani.jfif" alt="Tridhara">
+                    </a>
+                    <div class="photo-name">
+                        Tridhara Sommiloni Durga Puja
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/search/Tridhara+Sommiloni+Durga+Puja+pandal,+G9C2%2BGGR,+Satyendranath+Mazumder+Sarani,+Manoharpukur,+Kalighat,+Kolkata,+West+Bengal+700026/@22.5204498,88.3520709,18z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="Singhi Park Sarbojonin Durgotsab.jfif" title="Singhi"><img src="Singhi Park Sarbojonin Durgotsab.jfif" alt="Singhi">
+                    </a>
+                    <div class="photo-name">
+                        Singhi Park Sarbojonin Durgotsab
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Singhi+Park+Sarbojanin+Durga+Puja+Committee/@22.5209538,88.3601532,17z/data=!3m1!4b1!4m6!3m5!1s0x3a0276d5f6fa97af:0x310ce7fdfb83ca22!8m2!3d22.5209489!4d88.3627281!16s%2Fg%2F11b67g9mw4?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="photo-box">
+                    <a class="fancybox" rel="group" href="Suruchi Sangha.jfif" title="Suruchi"><img src="Suruchi Sangha.jfif" alt="Suruchi">
+                    </a>
+                    <div class="photo-name">
+                        Suruchi Sangha
+                    </div>
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Suruchi+Sangha/@22.5089904,88.3313773,17z/data=!3m1!4b1!4m6!3m5!1s0x3a027112d9c0466f:0x21832239a8285502!8m2!3d22.5089855!4d88.3339522!16s%2Fg%2F124yfytbp?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button>MAP</button>
+                        </a>
+                    </div>
+                    </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2026 Durga Puja Porikroma | All Rights Reserved
+    </footer>
+    <script>
+        $(document).ready(function () {
+            $(".fancybox").fancybox();
+        });
+    </script>
+</body>
+</html>
